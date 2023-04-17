@@ -1,0 +1,16 @@
+3-A) Working with docker, docker commands, docker images & Containers.
+
+Step 1: Create Docker Hub Account from https://hub.docker.com/
+Step 2: Navigate to Play with Docker from https://labs.play-with-docker.com/
+Step 3: Click on Create Instance and enter the following command
+a) docker -v
+b) docker -version
+c) docker pull rocker/verse 
+d) docker images  
+e) docker login --username=yourusername
+f) docker tag <imageid> username/repository:new_tagname 
+g) docker push username/repository_name:tag 
+
+-->Step 4: Navigate to Docker repository and check the Image in Tags section
+
+

@@ -1,0 +1,15 @@
+3B) Build your own image file from docker file & push & pull & run the file
+1)	Create docker file:
+
+cat > dockerfile << EoF
+FROM busybox
+CMD echo “Hello”
+EOF
+
+2)COMMAND TO BUILD DOCKER FILE :
+docker build .\
+docker images
+docker run –p 80:80 imageid  -->TAKE IMAGE ID FROM BUSYBOX ROW
+docker push username/repository_name:tag 
+
+-->NAVIAGTE TO DOCKER REPOSITORY AND CHECK IMAGE IN TAGS SECTION

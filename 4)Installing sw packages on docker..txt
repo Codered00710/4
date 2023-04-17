@@ -1,0 +1,70 @@
+4)Installing s/w packages on docker.
+Pre-Requisites:
+1.	Open Windows Firewall
+2.	Click on Advanced Security
+3.	Click on Inbound Rules
+4.	Create a New Rule
+a.	Which type of rule would you like to create → port
+b.	Does this rule apply the local ports or specific local ports
+c.	Select Specific local ports - 80
+d.	What action should be taken when a connection matches the specified conditions? - Allow the connection
+e.	When does this apply? – Domain, Private, Public
+f.	Name: ReportServer
+g.	Description: ReportServer
+
+
+COMMANDS IN DOCKER:
+Step 1:
+docker pull nginx – nginx : nginx is the image which is already available in docker
+Step 2:
+docker run -it –name=webApp -d -p 80:80 nginx: Create a webapp and run it with nginx image on port 80
+
+ 
+--> Click on Port and enter 80 in the dropdown window and click OK.
+
+Step 3: Enter the below command in order to enter into bash shell and then open port 80:
+ 
+docker exec -it WebApp bash
+Cd /usr/share/nginx/html
+Echo “Hello Welcome to updated nginx Page.”> index.html
+exit
+
+Step 4: List all the running containers: 
+docker ps 
+
+Step 5: Create another container in Docker: WebApp1 
+Docker run -it –name=WebApp1 -d -p 80:80 nginx:
+
+Step 6: Click on port and enter 80 in the dropdown and click ok
+Output: the welcome page of nginx should be visible
+
+Step 7: Creation of Volume(MyVolume)
+Command:
+a)	docker volume create MyVolume
+b)	docker volume ls
+c)	docker volume inspect MyVolume
+d)	docker stop WebApp1
+
+Step 8: Create a container (WebApp2) inside the container MyVolume:
+docker run -d –name = WebApp2 –mount source=MyVolume,destination=/usr/share/nginx/html –p 80:80 nginx
+
+
+Step 9: Enter the below commands:
+a)	ls /
+b)	cd /var/lib/docker
+c)	ls
+d)	cd volumes
+e)	ls
+f)	cd MyVolume
+g)	ls
+h)	cd _data
+
+
+Step 10:Edit the index file with the below content to “Display the content on the Webpage” :
+
+echo "From MyVolume HelloKB" > index.html
+
+-->open port 80
+
+
+
