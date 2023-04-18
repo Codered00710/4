@@ -1,0 +1,23 @@
+1. download sdk from (https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/install)
+2. Create new folder named (MyMVC)
+3.After creating the folder, Click right open in terminal 
+4.type : dotnet new mvc --auth none (output: Restore Succeeded.)
+5.Controllers>MyMVC
+6.(paste)
+using System;
+using System.Collections.Generic; using System.Diagnostics;
+using System.Linq; using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using MyMVC.Models;
+namespace MyMVC.Controllers
+{ public class HomeController: Controller
+ {
+ public String Index()
+ { return "Hello World";}
+ }
+}
+7.type : dotnet run
+8.a link will be visible named localhost:
+9.paste in google
+
